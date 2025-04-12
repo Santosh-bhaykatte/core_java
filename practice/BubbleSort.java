@@ -1,5 +1,7 @@
 package core_Java.practice;
 
+// Bubble sort implementation
+
 import java.util.Arrays;
 import java.util.Scanner;
 
