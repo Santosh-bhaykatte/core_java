@@ -1,5 +1,6 @@
 package core_Java.multithreading.inter_thread_communication;
 
+// logging using multithreading
 public class Logger {
     private static StringBuffer logBuffer = new StringBuffer();
     public static synchronized void log(String message) {
