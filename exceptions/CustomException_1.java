@@ -2,7 +2,7 @@ package core_Java.exceptions;
 
 import java.util.Scanner;
 
-//Custom Exception for Invalid Input
+//Custom Exception Handling for Invalid Input
 class InvalidInputException extends Exception {
     InvalidInputException(String str) {
         super(str);     //call's super class constructor
