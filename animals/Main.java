@@ -1,5 +1,6 @@
 package core_Java.animals;
 
+// Polymorphism
 interface Shape {
     public static final int COUNT = 3;
     void draw();
