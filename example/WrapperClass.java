@@ -22,7 +22,7 @@ Wrapper classes can hold null values, whereas primitives cannot.
 * */
 
 
-public class WrapperClassDemo {
+public class WrapperClass {
     public static void main(String[] args) {
         //Autoboxing: primitive to wrapper object
         Integer num1 = 10;      //int to Integer

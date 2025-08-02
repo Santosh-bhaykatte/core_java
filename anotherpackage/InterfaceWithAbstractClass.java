@@ -29,7 +29,7 @@ package core_Java.anotherpackage;
 
 interface Vehicle {
     int WHEELS = 4;     //public static final
-    final String BRAND = "TATA";
+    String BRAND = "TATA";
 
     //abstract methods
     void start();
@@ -54,7 +54,6 @@ abstract class AbstractVehicle implements Vehicle {
     public void stop() {
         System.out.println(name +" stopped.");
     }
-    abstract public void honk();    //leave honk() as abstract for subclasses to implement
 }
 
 class Car extends AbstractVehicle {
@@ -86,15 +85,17 @@ public class InterfaceWithAbstractClass {
         Vehicle.displayBrand();     //call static method of interface
         System.out.println("Wheels: "+ Vehicle.WHEELS);
 
-        Car car = new Car("nexon");
-        car.start();
-        car.honk();
-        car.stop();
+        Vehicle vehicle;
+
+        vehicle = new Car("nexon");
+        vehicle.start();
+        vehicle.honk();
+        vehicle.stop();
         System.out.println();
 
-        Truck truck = new Truck("tempo");
-        truck.start();
-        truck.honk();
-        truck.stop();
+        vehicle = new Truck("Tipper");
+        vehicle.start();
+        vehicle.honk();
+        vehicle.stop();
     }
 }

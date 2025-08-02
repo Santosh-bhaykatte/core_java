@@ -12,10 +12,7 @@ public class Main {
         Helper helper = new Helper();
         AnotherHelper anotherHelper = new AnotherHelper();
 
-        //object of Test class
-        Test test = new Test();
-
-        //object of subclass of Test class
+        //object of static inner class of Test class
         Test.SubTest subTest = new Test.SubTest();
         Test.AnotherSubTest anotherSubTest = new Test.AnotherSubTest();
 

@@ -1,3 +1,5 @@
+package core_Java;
+
 class SharedDataRunnable implements Runnable {
     private int counter = 0; // Shared data
 

@@ -20,7 +20,7 @@ public class Outer {
         }
     }
     public static void main(String[] args) {
-        //create instance of static nested class - does not require an instance of inner class
+        //create instance of static nested class - does not require an instance of outer class
         Outer.Inner inner = new Outer.Inner();
 
         //access non-static method from static nested class
@@ -29,7 +29,7 @@ public class Outer {
         //access static method from static nested class
         Outer.Inner.print();
 
-        // ***********************************************************
+        // **********************************************************************
 
         //create instance of non-static inner class - requires an instance of outer class
         Outer outer = new Outer();

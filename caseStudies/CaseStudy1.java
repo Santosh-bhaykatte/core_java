@@ -20,15 +20,6 @@ class Employee {
     public void setB_salary(double b_salary) {
         this.b_salary = b_salary;
     }
-    public void setDesignB_salary() {
-        if (yoe >= 3) {
-            setDesignation("ITA");
-            setB_salary(15000.0);
-        } else {
-            setDesignation("ASE");
-            setB_salary(10000.0);
-        }
-    }
 
     public Employee(String name, char gender) {
         this.name = name;
@@ -47,6 +38,16 @@ class Employee {
 
         status = "Active";
     }
+    public void setDesignB_salary() {
+        if (yoe >= 3) {
+            setDesignation("ITA");
+            setB_salary(15000.0);
+        } else {
+            setDesignation("ASE");
+            setB_salary(10000.0);
+        }
+    }
+
     public double promoteEmp() {
         if (getDesignation().equalsIgnoreCase("ASE")) {
             setDesignation("ITA");

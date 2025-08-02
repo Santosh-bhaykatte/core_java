@@ -1,8 +1,15 @@
 package core_Java.animals;
 
 interface Aquatic {
+    String HABITAT = "Water";
     default void move() {
         System.out.println("moving..");
+    }
+    static void info() {
+        System.out.println("Aquatic animal");
+    }
+    default void sound() {
+        System.out.println("Makes sound");
     }
 }
 
@@ -28,9 +35,12 @@ class Duck implements Walkable, Swimmable {
     }
 }
 
-public class MultipleInheritanceUsingInterface {
+public class MultipleInheritance {
     public static void main(String[] args) {
-        Duck duck = new Duck();
+        Aquatic duck = new Duck();
         duck.move();
+        Aquatic.info();
+        System.out.println(Aquatic.HABITAT);
+        duck.sound();
     }
 }

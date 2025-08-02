@@ -8,7 +8,7 @@ interface Shape {
 }
 class Circle implements Shape {
     private double r = 7.0;
-    private double PI = 3.14;
+    private final double PI = 3.14;
     @Override
     public void draw() {
         System.out.println("drawing circle..");

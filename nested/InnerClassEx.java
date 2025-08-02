@@ -20,6 +20,7 @@ class Outer {
     class Inner {
         void display() {
             System.out.println("Outer variable: "+ outerVar);
+            System.out.println("Outer static variable: "+ staticOuterVar);
         }
     }
     static class Nested {
@@ -64,6 +65,6 @@ public class InnerClassEx {
         };
 
         greeting.greet();
-
+        greeting.hello();
     }
 }

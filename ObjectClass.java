@@ -11,7 +11,7 @@ class Student {
     public String toString() {
         return "Student [ name = "+ name +", age = "+ age +"]";
     }
-    /*
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Student) {
@@ -21,7 +21,7 @@ class Student {
         return false;
     }
 
-     */
+    /*
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;   // Same object → true
@@ -29,6 +29,8 @@ class Student {
         Student student = (Student) obj;
         return this.name.equals(student.name) && this.age == student.age;   // Compare fields
     }
+
+     */
 }
 
 class Person {
@@ -41,10 +43,9 @@ public class ObjectClass {
         Student s2 = new Student("Santo", 22);
         Student s3 = s1;
 
-        /*
+
         System.out.println(s1.equals(s2));      // Default implementation (check for references like ==)
         System.out.println(s1.equals(s3));
-         */
 
         Person p = new Person();
 

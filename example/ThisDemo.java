@@ -34,7 +34,6 @@ public class ThisDemo {
         Student student = new Student();
         student.display();
 
-        Counter counter = new Counter();
-        counter.increment().increment().increment().display();      //method chaining
+        new Counter().increment().increment().increment().display();    //Method chaining
     }
 }
