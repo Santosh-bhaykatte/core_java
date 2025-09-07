@@ -11,7 +11,7 @@ class InsufficientBalanceException extends Exception {
 
 class Account {
     private double balance;
-    Account(double balance) {   //initialize balance
+    Account(double balance) {   //Initialize balance
         this.balance = balance;
     }
     public void withdraw(double amount) throws InsufficientBalanceException {

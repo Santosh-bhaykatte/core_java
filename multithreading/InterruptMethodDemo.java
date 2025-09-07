@@ -5,9 +5,11 @@ public class InterruptMethodDemo {
         Thread thread = new Thread(() -> {
             try {
                 Thread.sleep(100);
+                System.out.println("Thread woke up naturally");
             } catch (InterruptedException e) {
-                System.out.println("Thread was interrupted");
+                System.out.println("Thread was interrupted while sleeping");
             }
+            System.out.println("Thread finished execution");
         });
         thread.start();
         thread.interrupt();

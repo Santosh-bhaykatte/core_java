@@ -130,7 +130,7 @@ public class ExceptionHandling {
         }
 
         try {
-            validateAnotherAge(13);     //Throws InvalidStudentAgeException
+            validateAnotherAge(13);     //Throws InvalidAgeException
         } catch (InvalidAgeException e) {
             System.out.println("Exeption: "+ e.getMessage());
         }

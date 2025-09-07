@@ -3,7 +3,7 @@ package core_Java.multithreading;
 class MyRunnable implements Runnable {
     @Override
     public void run() {
-        System.out.println("AnotherMyRunnable is running");
+        System.out.println("MyRunnable is running");
     }
 }
 
