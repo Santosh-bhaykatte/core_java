@@ -1,71 +1,72 @@
 package core_Java.multithreading.sync;
 
-// Shared resource class
+//Shared Resource Class
 class SharedResource {
-    // Synchronized Method: Locks the entire method
+    int count = 0;
+    //Synchronized Method
     public synchronized void synchronizedMethod(String message) {
-        System.out.print("[ "+ message);
+        count++;
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
-        System.out.println(" ]");
     }
-    // Non-Synchronized method with synchronized block
-    public void synchronizedBlock(String message) {
-        synchronized (this) {   // Locks only this block
-            System.out.println("Thread "+ Thread.currentThread().getName() +" trying to enter synchronized block");
 
-            System.out.print("[ "+ message);
+    //Non-synchronized method with synchronized block
+    public void synchronizedBlock(String message) {
+        synchronized (this) {
+            count++;
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 System.out.println(e);
             }
-            System.out.println(" ]");
         }
     }
 }
 
-// Thread class that calls synchronized methods
+//Thread class for shared resource access
 class MyThread extends Thread {
-    SharedResource resource;
+    SharedResource resource;    //Aggregation
     String message;
-    boolean useMethod;  // true for synchronized method, false for synchronized block
+    boolean useMethod;  // True for synchronized method, False for synchronized block
 
-    public MyThread(SharedResource resource, String message, Boolean useMethod) {
+    public MyThread(SharedResource resource, String message, boolean useMethod) {
         this.resource = resource;
         this.message = message;
         this.useMethod = useMethod;
     }
 
     @Override
-    public void run () {
-        if (useMethod) {
-            resource.synchronizedMethod(message);
+    public void run() {
+        if(useMethod) {
+            for (int i = 0; i < 5; ++i) {
+                resource.synchronizedMethod(message);
+            }
         } else {
-            resource.synchronizedBlock(message);
+            for (int i = 0; i < 5; ++i) {
+                resource.synchronizedBlock(message);
+            }
         }
     }
 }
 
 public class SyncDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         SharedResource sharedResource = new SharedResource();
 
-        // Threads using synchronized method
-        MyThread myThread1 = new MyThread(sharedResource, "synchronized method", true);
-        MyThread myThread2 = new MyThread(sharedResource, "synchronized mehtod", true);
+        //Thread accessing synchronized method
+        MyThread thread1 = new MyThread(sharedResource, "Thread-1", true);
 
-        // Threads using synchronized block
-        MyThread myThread3 = new MyThread(sharedResource, "synchronized block", false);
-        MyThread myThread4 = new MyThread(sharedResource, "synchronized block", false);
+        //Thread accessing synchronized block
+        MyThread thread2 = new MyThread(sharedResource, "Thread-2", false);
 
-        // Start all threads
-        myThread1.start();
-        myThread2.start();
-        myThread3.start();
-        myThread4.start();
+        thread1.start();
+        thread2.start();
+        thread1.join();
+        thread2.join();
+
+        System.out.println("Total count: "+ sharedResource.count);
     }
 }

@@ -1,25 +1,17 @@
 package core_Java.multithreading.inter_thread_communication;
 
-// logging using multithreading
+// Logging using multithreading
 public class Logger {
-    private static StringBuffer logBuffer = new StringBuffer();
+    private static StringBuffer logbuffer = new StringBuffer();
+
     public static synchronized void log(String message) {
-        logBuffer.append(Thread.currentThread().getName()).append(": ").append(message).append("\n");
+        logbuffer.append(Thread.currentThread().getName()).append(" : ").append(message).append("\n");
     }
+
     public static void main(String[] args) throws InterruptedException {
-        /*
-        Runnable task = new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 5; ++i) {
-                    log("Logging event "+ i);
-                }
-            }
-        };
-         */
         Runnable task = () -> {
-            for (int i = 0; i < 5; ++i) {
-                log("Logging event "+ i);
+            for (int i = 0; i <= 3; ++i) {
+                log("Logging event: "+ i);
             }
         };
 
@@ -32,6 +24,6 @@ public class Logger {
         t1.join();
         t2.join();
 
-        System.out.println(logBuffer.toString());
+        System.out.println("Log Message: "+ logbuffer.toString());
     }
 }
