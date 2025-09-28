@@ -1,11 +1,11 @@
 package core_Java.strings;
 
-/*  StringBuilder
+/*  StringBuilder:
 * Mutable: The content of a StringBuilder can be changed after it is created.
 * Not Thread-Safe: StringBuilder is not synchronized, meaning it is not safe for use in multi-threaded environments.
 * Performance: It is faster than StringBuffer because it does not have the overhead of synchronization.
 
-* StringBuffer
+* StringBuffer:
 * Mutable: Like StringBuilder, the content of a StringBuffer can be changed after it is created.
 * Thread-Safe: StringBuffer is synchronized, meaning it is safe for use in multi-threaded environments
 * Performance: It is slower than StringBuilder due to the overhead of synchronization.
@@ -55,14 +55,14 @@ class MyThread extends Thread {
 public class MutableStringPlayground {
     public static void main(String[] args) throws InterruptedException {
         StringBuilder sb = new StringBuilder("Hello");
-        //methods
+        //Methods
         sb.append(" World");
         sb.insert(5, ',');
         sb.delete(5, 6);
         sb.reverse();
 
         String result = sb.toString();
-//        System.out.println(result);
+        System.out.println(result);
 
         StringBuilder sbl = new StringBuilder();
         for (int i = 0; i < 5; ++i) {
@@ -71,6 +71,7 @@ public class MutableStringPlayground {
 //        System.out.println(sbl.toString());
 
         StringBuffer stringBuffer = new StringBuffer();
+
         MyThread thread1 = new MyThread(stringBuffer);
         MyThread thread2 = new MyThread(stringBuffer);
 
