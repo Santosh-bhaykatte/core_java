@@ -17,5 +17,7 @@ public class Playground {
         System.out.println(5 ^ 6);      //same bits -> False else True
         System.out.println(~5);
         System.out.println(~-5);
+        System.out.println(5<<2);       // a << b : a * Math.pow(2, b)
+        System.out.println(6>>1);       // a >> b : a / Math.pow(2, b)
     }
 }
