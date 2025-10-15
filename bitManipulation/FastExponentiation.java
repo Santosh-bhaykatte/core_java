@@ -13,6 +13,6 @@ public class FastExponentiation {
         return res;
     }
     public static void main(String[] args) {
-        System.out.println(fastExpo(3, 5));
+        System.out.println(fastExpo(2, 5));
     }
 }
