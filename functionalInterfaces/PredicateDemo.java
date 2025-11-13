@@ -1,3 +1,11 @@
+/*
+
+public interface Predicate<T> {
+    boolean test(T t);
+}
+
+* */
+
 package core_Java.functionalInterfaces;
 
 import java.util.Arrays;
