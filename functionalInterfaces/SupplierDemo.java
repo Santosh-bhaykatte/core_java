@@ -20,7 +20,13 @@ class Student {
 }
 
 public class SupplierDemo {
+    //Method accepting Supplier
+    static void getMessage(Supplier<String> supplier) {
+        System.out.println("Value: "+ supplier.get());
+    }
+
     public static void main(String[] args) {
+        /*
         Supplier<String> greet = () -> "Hello Supplier!";
         System.out.println(greet.get());
 
@@ -33,5 +39,10 @@ public class SupplierDemo {
         Supplier<Student> studentSupplier = Student::new;   //Constructor reference
 
         Student student = studentSupplier.get();
+
+         */
+
+        getMessage(() -> "Hello Java");
+        getMessage(() -> "Current time: "+ System.currentTimeMillis());
     }
 }

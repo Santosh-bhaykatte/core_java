@@ -21,7 +21,13 @@ class User {
 }
 
 public class ConsumerDemo {
+    //Method accepting Consumer
+    static void displayMessage(String msg, Consumer<String> action) {
+        action.accept(msg);
+    }
+
     public static void main(String[] args) {
+        /*
         Consumer<String> printer = (s) -> System.out.println("Msg: "+ s);
         printer.accept("Hello World");
 
@@ -52,5 +58,9 @@ public class ConsumerDemo {
 
         3. c.accept(listElement)
          */
+
+        displayMessage("Hello", (s) -> System.out.println(s.toUpperCase()));
+        displayMessage("Santo", s -> System.out.println("Welcome "+ s));
+
     }
 }

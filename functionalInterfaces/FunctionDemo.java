@@ -20,7 +20,13 @@ class Employee {
 }
 
 public class FunctionDemo {
+    //Method accepting Function
+    static Integer process(Integer value, Function<Integer, Integer> func) {
+        return func.apply(value);
+    }
+
     public static void main(String[] args) {
+        /*
         Function<Integer, Integer> square = (n) -> n * n;   //square
         System.out.println(square.apply(5));
 
@@ -38,5 +44,13 @@ public class FunctionDemo {
 
         Function<Employee, String> nameExtracter = (employee1) -> employee1.name;
         System.out.println("name: "+ nameExtracter.apply(employee));
+
+         */
+
+        //Passing lambda to method
+        int result = process(10, n -> n * n);
+        System.out.println(result);
+
+        System.out.println(process(100, x -> x + 10));
     }
 }
